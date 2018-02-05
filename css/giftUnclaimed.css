@@ -1,0 +1,83 @@
+html{
+  background: #253355;
+}
+body{
+  background: url('../img/bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #dbe3f1;
+  
+}
+/* 温馨提示*/
+.giftUnclaimed-main {
+  padding-top: .4rem;
+  padding-bottom: .2rem;
+  font-size: .24rem;
+}
+.giftUnclaimed-main .tip{
+  width: 6.55rem;
+  line-height: .46rem;
+  padding: .1rem .28rem;
+  background: #061F3D;
+  border: 1px solid #0AB6DA;
+  border-radius: .1rem;
+  color: #9cc8ff;
+  font-size: .24rem;
+  margin: 0 auto .1rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-animation: bounceInDown 1s 0s ease both;
+  animation: bounceInDown 1s 0s ease both;
+}
+.giftUnclaimed-main .gift{
+  padding: .2rem 0 .2rem .3rem;
+  border-bottom: 1px solid #253355;
+  overflow: hidden;
+}
+.giftUnclaimed-main .gift .giftLeft{
+  width: 2.3rem;
+  height: 2.24rem;
+  padding: .14rem;
+  border: 1px solid #2672D0;
+  border-radius: .1rem;
+  float: left;
+  margin-right: .2rem;
+}
+.giftUnclaimed-main .gift .giftLeft img{
+  width: 2.29rem;
+  height: 2.22rem;
+  border: 1px solid #2672D0;
+  border-radius: .1rem;
+}
+.giftUnclaimed-main .gift .giftRight{
+   float: left;
+   width: 3.8rem;
+   color: #1BB2F3;
+   white-space: normal;
+   line-height: .38rem;
+   padding-top: .1rem;
+}
+.giftUnclaimed-main .gift .giftRight .tip1{
+   color: #DBE3F1;
+}
+.giftUnclaimed-main .gift .giftRight .tip2 strong{
+   color: #DBE3F1;
+   font-weight: normal;
+}
+.giftUnclaimed-main .gift .giftRight .tip3{
+   color: #DA225B;
+}
+
+/*温馨提示动画*/
+@-webkit-keyframes bounceInDown{
+  0%{opacity:0;-webkit-transform:translateY(-2000px)}
+  60%{opacity:1;-webkit-transform:translateY(30px)}
+  80%{-webkit-transform:translateY(-10px)}
+  100%{-webkit-transform:translateY(0)}
+}
+@keyframes bounceInDown{
+  0%{opacity:0;transform:translateY(-2000px)}
+  60%{opacity:1;transform:translateY(30px)}
+  80%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}

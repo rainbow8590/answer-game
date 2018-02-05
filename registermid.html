@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="css/style-index.css?v1" />
+    <script src="http://img.gaosiedu.com/www/js/jquery.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://huodong.gaosiedu.com/Scripts/WXCommon.js"></script>
+    <script type="text/javascript">
+        var InterValObj; //timer变量，控制时间
+        var count = 30; //间隔函数，1秒执行
+        var curCount;//当前剩余秒数
+        var code = ""; //验证码
+        var codeLength = 4;//验证码长度
+        function sendMessage() {
+            curCount = count;
+            var dealType; //验证方式
+            var uid=$("#uid").val();//用户uid
+            if ($("#phone").attr("checked") == true) {
+                dealType = "phone";
+            }
+            else {
+                dealType = "email";
+            }
+            //产生验证码
+            for (var i = 0; i < codeLength; i++) {
+                code += parseInt(Math.random() * 9).toString();
+            }
+            //设置button效果，开始计时
+            $("#btnSendCode").attr("disabled", "true");
+            $("#btnSendCode").val( + curCount + "秒再获取");
+            InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+            //向后台发送处理数据
+            $.ajax({
+                type: "POST", //用POST方式传输
+                dataType: "text", //数据格式:JSON
+                url: 'Login.ashx', //目标地址
+                data: "dealType=" + dealType +"&uid=" + uid + "&code=" + code,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { },
+                success: function (msg){ }
+            });
+        }
+        //timer处理函数
+        function SetRemainTime() {
+            if (curCount == 0) {                
+                window.clearInterval(InterValObj);//停止计时器
+                $("#btnSendCode").removeAttr("disabled");//启用按钮
+                $("#btnSendCode").val("重新发送验证码");
+                code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效    
+            }
+            else {
+                curCount--;
+                $("#btnSendCode").val( + curCount + "秒再获取");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var options = {
+                activityId: 8,
+                isClickCount: 1, //0不记录 1记录 默认不记录
+                url: location.href,
+                domainUrl: "http://huodong.gaosiedu.com/yiyuanjiaoshi/Index.html?data=" + Math.random(),
+                imgUrl: "../img/share.jpg",
+                tittle: '【视频讲解】高乐乐拼音免费课',
+                callBack: function () {
+                }
+            };
+            $.WXShare(options);
+
+            $(".page-registermid .regBtn").click(function(){
+                var name = $("#name").val();  
+                var grade = $("#grade").val();
+                var vcodeImg = $("#vcodeImg").val();
+                var vcode = $("#vcode").val();
+                if (name == "" || grade == "") {  
+                    $("#errormsg").html("请输入学生姓名").fadeIn(300).delay(2000).fadeOut(300);
+                    return false;
+                }
+
+                if (!$("#phone").val().match(/^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/) ) {  
+                    $("#errormsg").html("请输入11位手机号码").fadeIn(300).delay(2000).fadeOut(300);
+                    return false;
+                }
+                
+                if (vcode == "" || vcode.length<4 || vcodeImg == "" || vcodeImg.length<4)  {  
+                    $("#errormsg").html("请输入验证码").fadeIn(300).delay(2000).fadeOut(300);
+                    return false;
+                }
+                return true;
+            });
+        })
+    </script>
+</head>
+<body>
+    <section class="page-bg page-registermid">
+        <section class="main">
+            <div class="mod-bg">
+                <div class="logo tac"><img src="img/logo.png" width="60%" /></div>
+                <form action="GamesLobby.html">
+                    <ul>
+                        <li class="flex">
+                            <label>姓	名</label>
+                            <div class="flex_item inp-bd"><input type="text" name="name" id="name" value="" placeholder="请输入学生姓名" /></div>
+                        </li>
+                        <li class="flex">
+                            <label>年	级</label>
+                            <div class="flex_item inp-bd">
+                                <select name="grade" id="grade">
+                                    <option value="一年级">一年级</option>
+                                    <option value="二年级">二年级</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <label>手机号</label>
+                            <div class="flex_item inp-bd">
+                                <input type="tel" name="phone" id="phone" value="" placeholder="请输入手机号码" />
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <label>图片验证码</label>
+                            <div class="flex_item inp-bd">
+                                <div class="flex">
+                                    <input type="number" name="vcode" id="vcodeImg" value="" placeholder="输入图片验证码" class="flex_item" />
+                                    <img onclick="updateseccode('cSvke0xf')" src="misc.php?mod=seccode&amp;update=84245&amp;idhash=cSvke0xf" class="vm" width="100" height="30">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <label>验证码</label>
+                            <div class="flex_item inp-bd">
+                                <div class="flex">
+                                    <input type="number" name="vcode" id="vcode" value="" placeholder="请输入手机验证码" class="flex_item" />
+                                    <input id="btnSendCode" onclick="sendMessage()" type="button" value="获取验证码" class="reg-vcode"  />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="submit">
+                            <input type="submit" value="" class="regBtn" />
+                        </li>
+                    </ul>
+                    <div id="errormsg" style="display:none"></div>
+                </form>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>对战</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/battle.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+  <script>
+    //浏览器里有缓存就重新刷新页面
+    window.onpageshow = function(event){
+      if (event.persisted) {
+        window.location.reload();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="answer-main">
+    <!-- 年级 -->
+    <div class="grade"><em>2018.3.5</em>一年级</div>
+    <div class="question-wrap">
+      <!-- 题号 -->
+      <div class="question-no">
+        <!-- 个人 -->
+        <div class="self friend1 animateLeft">
+          <p>昵称</p>
+          <img src="./img/avtor.jpg"/>
+        </div>
+        <div class="self friend2 animateRight">
+          <p>昵称</p>
+          <img src="./img/avtor.jpg"/>
+          </div>
+        <!-- 倒计时 -->
+        <div class="time">
+          <div class="time-bg"></div>
+          <div class="time-bg1"></div>
+          <div class="num">00</div>
+        </div>
+        <!-- 题号 -->
+        <div class="question-no-num animate">1</div>
+      </div>
+      <!-- 题目 -->
+      <div class="question">
+        <div class="question-title bounceInUp1">
+          <p>My mom asked me stady ---- home all the day.</p>
+          <img  src="./img/answer_img.png" alt="">
+        </div>
+        <div class="question-select ">
+            <!-- 进度 -->
+             <div class="progress progress-left">
+              <div class="inner"></div>
+             </div>
+            <!-- 进度 -->
+             <div class="progress progress-right">
+              <div class="inner"></div>
+             </div>
+          <ul>
+            <li class="bounceInUp2">in</li>
+            <li class="bounceInUp3">at</li>
+            <li class="bounceInUp4">on</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery.1.12.4.js"></script>
+  <script src="./js/answerAndBattle.js"></script>
+  <script>
+  go('battleComplete')
+
+  // 设置进度条的高度
+  var h = $('.question-title img').height()/ 100 + 0.4 + $('.question-select').height()/100-0.1
+  $('.progress').css({ 'height': h+'rem' })
+  $('.progress .inner').css({ 'height':'4rem' })
+  /*// 制作倒计时背景
+    var str = '';
+    var str1 = '';
+    //下层背景
+    function bottoms(){
+      for(var i = 0 ; i < 30; i++){
+        str += '<div class="time-item time-item1"></div>';
+      }
+      $('.time-bg').html(str);
+      for(var i = 0 ; i < 30; i++){
+        $('.time-item1').eq(i).css({
+          'transform':'rotate('+i*12+'deg)',
+          'transform-origin':'50% 100%'
+        });
+      }
+    }
+    //上层背景
+    function tops(){
+      for(var i = 0 ; i < 30; i++){
+        str1 += '<div class="time-item time-item2"></div>';
+      }
+      $('.time-bg1').html(str1);
+      for(var i = 0 ; i < 30; i++){
+        $('.time-item2').eq(i).css({
+          'transform':'rotate('+i*12+'deg)',
+          'transform-origin':'50% 100%'
+        });
+      }
+    }
+
+    bottoms();
+    tops();
+
+    //倒计时
+    var timer;
+    var num = 0;
+    var grade = 2;
+    var total = grade == 1? 15 : 10;
+    $('.time .num').html(total);
+    setTimeout(downs,2000)
+    // downs();
+    function downs(){
+      timer= setInterval(function aa(){
+        total--;
+        num++;
+        //删除第一个元素
+        if(grade == 2){  //一年级时间是60s
+          $('.time-item2').eq(0).remove();
+        }else if( grade == 1 && num%2 == 0){//一年级时间是30s
+          $('.time-item2').eq(0).remove();
+        }
+        if(total <= 0){
+          removeclass();
+          clearInterval(timer);
+          setTimeout(addclass,200)
+          }
+          $('.time .num').html(total);
+        },1000)
+      }
+
+    // 下一题动画
+    var rightAnswerNum = 1;
+    $('li').on('click',function(){
+      var that = $(this);
+      //倒计时临界值时点击
+      if(total >= 1){
+        clearInterval(timer)
+        //显示正确答案
+        var selectIndex = that.index();
+        if(selectIndex == rightAnswerNum){
+            that.addClass('right');
+        }else{
+            that.addClass('wrong');
+            $('li').eq(rightAnswerNum).addClass('right');
+        }
+        removeclass()
+        //跳转到下一题
+        setTimeout(addclass,2000)
+      }
+    })
+
+    function addclass(){
+      $('.question-no-num').html(Number($('.question-no-num').html())+1);
+      $('.question-no-bg img').addClass('animate');
+      $('.question-no-num').addClass('animate');
+      $('.question-no-type').addClass('animate');
+      $('li').attr('class','');
+      $('li').eq(0).addClass('bounceInUp2');
+      $('li').eq(1).addClass('bounceInUp3');
+      $('li').eq(2).addClass('bounceInUp4');
+      total = grade ==  1? 15 : 10;
+      tops();
+      setTimeout(downs,2000)
+      $('.time .num').html(total);
+    }
+    function removeclass(){
+      $('.question-no-num').removeClass('animate');
+      $('.question-no-type').removeClass('animate');
+      $('.question-no-bg img').removeClass('animate');
+      $('li').eq(0).removeClass('bounceInUp2');
+      $('li').eq(1).removeClass('bounceInUp3');
+      $('li').eq(2).removeClass('bounceInUp4');
+    }
+  */
+  </script>
+</body>
+</html>

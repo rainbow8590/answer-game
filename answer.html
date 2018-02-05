@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>答题</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/answer.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+  <script>
+    //浏览器里有缓存就重新刷新页面
+    window.onpageshow = function(event){
+      if (event.persisted) {
+        window.location.reload();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="answer-main">
+    <!-- 年级 -->
+    <div class="grade"><em>2018.3.5</em>一年级</div>
+    <div class="question-wrap">
+      <!-- 题号 -->
+      <div class="question-no">
+        <div class="question-no-bg">
+          <img src="./img/answer_titleBg.png" class="animate">
+        </div>
+        <div class="question-no-num animate">1</div>
+        <div class="question-no-type animate">英语<strong>类型1</strong></div>
+        <!-- 倒计时 -->
+        <div class="time">
+          <div class="time-bg"></div>
+          <div class="time-bg1"></div>
+          <div class="num">00</div>
+        </div>
+      </div>
+      <!-- 题目 -->
+      <div class="question">
+        <div class="question-title bounceInUp1">
+          <p>My mom asked me stady ---- home all the day.</p>
+          <img  src="./img/answer_img.png" alt="">
+        </div>
+        <div class="question-select bounceInUp2">
+          <ul>
+            <li class="bounceInUp2">in</li>
+            <li class="bounceInUp3">at</li>
+            <li class="bounceInUp4">on</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery.1.12.4.js"></script>
+  <script src="./js/answerAndBattle.js"></script>
+  <script>
+  go('answerComplete')
+  </script>
+</body>
+</html>

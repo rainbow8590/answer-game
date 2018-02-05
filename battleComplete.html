@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>答题完成</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/complete.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+</head>
+<body>
+  <div class="answerComplete-main battleComplete-main">
+    <div class="content">
+      <!-- 赞 -->
+      <div class="title">PK结果</div>
+      <!-- 成绩 -->
+      <div class="result">
+        <p>我的正确题数：110</p>
+        <p>好友正确题数：110</p>
+        <p>本局获得金币：110</p>
+        <p>好友获得金币：110</p>
+      </div>
+      <!-- 进度 -->
+      <div class="progress">
+        <div class="item">
+          <div class="avtor"><img src="./img/avtor.jpg" alt=""></div>
+          <div class="progress-bottom">
+              <div class="progress-top"> 
+              </div>
+              <div class="progress-circle"></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="avtor"><img src="./img/avtor.jpg" alt=""></div>
+          <div class="progress-bottom">
+              <div class="progress-top">
+                
+              </div>
+              <div class="progress-circle"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 按钮 -->
+      <div class="btn"><a href="./answer.html">继续答题</a></div>
+    </div>
+    <div class="share">
+      <div class="share-txt">分享给小伙伴来看下你们的比拼吧,也可以邀请其他小伙伴来一起对战哦~</div>
+      <div class="share-btn">去分享</div>
+    </div>
+
+    <style>
+      .layer-share {
+        background: rgba(0,0,0,.8);
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: right;
+      }
+
+    </style>
+    <!--分享提示-->
+    <div class="layer-share" style="display:none">
+    	<img src="img/share.png" width="60%" />
+    </div>
+
+  </div>
+  <script src="./js/jquery.1.12.4.js"></script>
+  <script>
+	  var goldTotal = 500; // 总金币数
+	  var myGold = 300;    // 本人金币
+	  var friendGold = 400; // 好友金币
+	  var allWidth = $('.progress-bottom').width();  //进度条总长度
+	  $('.item').find('.progress-top').css("width",0)
+	  animates(0,myGold)
+	  animates(1,friendGold)
+	  // 自己进度
+	  function animates(num,who){
+	    $('.item').eq(num).find('.progress-top').animate({
+	      width: who/goldTotal*allWidth/100 +'rem'
+	    },1000)
+	    $('.item').eq(num).find('.progress-circle').animate({
+	      'left': who/goldTotal*allWidth/100-0.1 +'rem'
+	    },1000)
+	  }
+
+	  $(".share-btn").click(function() {
+	  	$(".layer-share").show();
+	  });
+	  $(".layer-share").click(function() {
+	  	$(this).hide();
+	  })
+  </script>
+</body>
+</html>

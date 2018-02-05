@@ -1,0 +1,218 @@
+body{
+  background: url('../img/bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #dbe3f1;
+}
+.answer-main{
+  font-size: .24rem;
+}
+.answer-main .grade{
+  line-height: 1rem;
+  padding-left: .3rem;
+  color: #1BB2F3;
+  padding-bottom: .1rem;
+}
+.answer-main .grade em{
+  padding-right: .3rem;
+}
+.answer-main .question-wrap{
+  background: rgba(2,17,29,.5);
+  margin:  0 .3rem;
+  padding: .3rem 0 .5rem 0;
+}
+.answer-main .question-no{
+  position: relative;
+  text-align: center;
+  margin-bottom: .2rem;
+}
+.answer-main .question-no .question-no-bg img{
+  width: 5.89rem;
+  height: 3.08rem;
+}
+.answer-main .question-no .question-no-bg img.animate{
+  -webkit-animation: bounceInDown 1s .2s ease both;
+  animation: bounceInDown 1s .2s ease both;
+}
+.answer-main .question-no .question-no-num{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #D0235C;
+}
+.answer-main .question-no .question-no-num.animate{
+  -webkit-animation: bounceInDown1 1s .5s ease both;
+  animation: bounceInDown1 1s .5s ease both;
+}
+.answer-main .question-no .question-no-type{
+  font-size: .24rem;
+  position: absolute;
+  left: 0;
+  top: 2.08rem;
+  width: 100%;
+  height: 100%;
+  color: #D0235C;
+  font-size: .18rem;
+  color: #DBE3F1;
+}
+.answer-main .question-no .question-no-type.animate{
+  -webkit-animation: fadeIn 1s 1.5s ease both;
+  animation: fadeIn 1s 1.5s ease both;
+}
+.answer-main .question-no .question-no-type strong{
+  padding: .005rem .2rem;
+  border-radius: .1rem;
+  background: #0D91CA;
+  margin-left: .15rem;
+  font-weight: normal;
+}
+.answer-main .question-no .time{
+  position: absolute;
+  right: .2rem;
+  top: -.2rem;
+  width: .6rem;
+  height: .6rem;
+}
+.answer-main .question-no .time .time-bg{
+  width: .6rem;
+  height: .6rem;
+  position: absolute;
+  left: .3rem;
+}
+.answer-main .question-no .time .time-bg1{
+  width: .6rem;
+  height: .6rem;
+  position: absolute;
+  left: .3rem;
+}
+.answer-main .question-no .time .time-item{
+  width: 1px;
+  height: .3rem;
+}
+.answer-main .question-no .time .time-item1{
+  background: #21314f;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.answer-main .question-no .time .time-item2{
+  background: #0D90C8;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.answer-main .question-no .time .num{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -.22rem;
+  margin-top: -.23rem;
+  width: .44rem;
+  height: .44rem;
+  background: #06141E;
+  color: #DBE3F1;
+  border-radius: 50%;
+  text-align: center;
+  line-height: .44rem;
+  font-size: .14rem;
+}
+
+.answer-main .question .question-title{
+  padding: .2rem .8rem .4rem;
+}
+.answer-main .question .question-title p{
+  padding-bottom: .2rem;
+}
+.answer-main .question .question-title img{
+  border-radius: .1rem;
+}
+.answer-main .question .question-select li{
+  width: 4.9rem;
+  height: .66rem;
+  line-height: .66rem;
+  text-align: center;
+  border: 1px solid #2672D0;
+  border-radius: .1rem;
+  margin: 0 auto .2rem;
+}
+.answer-main .question .question-select li.right{
+  border-color: #29A352;
+  background: #29A352;
+}
+.answer-main .question .question-select li.right{
+  border-color: #29A352;
+  background: #29A352;
+  -webkit-animation: scale .5s 0s ease both;
+  animation: scale .5s 0s ease both;
+}
+.answer-main .question .question-select li.wrong{
+  border-color: #D3366A;
+  background: #D3366A;
+}
+
+.answer-main .question .bounceInUp1{
+ -webkit-animation: bounceInUp 1s .2s ease both;
+ animation: bounceInUp 1s .2s ease both;
+}
+.answer-main .question .question-select li.bounceInUp2{
+ -webkit-animation: bounceInUp 1s .4s ease both;
+ animation: bounceInUp 1s .4s ease both;
+}
+.answer-main .question .question-select li.bounceInUp3{
+ -webkit-animation: bounceInUp 1s .6s ease both;
+ animation: bounceInUp 1s .6s ease both;
+}
+.answer-main .question .question-select li.bounceInUp4{
+ -webkit-animation: bounceInUp 1s .8s ease both;
+ animation: bounceInUp 1s .8s ease both;
+}
+
+
+@-webkit-keyframes bounceInDown{
+  0%{opacity:0;-webkit-transform:translateY(-2000px)}
+  60%{opacity:1;-webkit-transform:translateY(30px)}
+  80%{-webkit-transform:translateY(-10px)}
+  100%{-webkit-transform:translateY(0)}
+}
+@keyframes bounceInDown{
+  0%{opacity:0;transform:translateY(-2000px)}
+  60%{opacity:1;transform:translateY(30px)}
+  80%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+@-webkit-keyframes bounceInDown1{
+  0%{opacity:0;-webkit-transform:translateY(-2000px)}
+  100%{opacity:1;-webkit-transform:translateY(0)}
+}
+@keyframes bounceInDown1{
+  0%{opacity:0;transform:translateY(-2000px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+  0%{opacity:0}
+  100%{opacity:1}
+}
+@keyframes scale{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+
+
+
+
+
+@-webkit-keyframes bounceInUp{
+  0%{opacity:0;-webkit-transform:translateY(2000px)}
+  100%{opacity:1;-webkit-transform:translateY(0)}
+}
+@keyframes bounceInUp{
+  0%{opacity:0;transform:translateY(2000px)}
+  100%{opacity:1;transform:translateY(0)}
+}

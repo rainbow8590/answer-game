@@ -1,0 +1,91 @@
+body{
+  background: url('../img/bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #dbe3f1;
+
+}
+/* 礼物展示 */
+.giftExchange-main .gifts{
+  padding: .4rem 0 .1rem .7rem;
+  border-bottom: 1px solid #253355;
+  overflow: hidden;
+
+}
+.giftExchange-main .gifts .giftItem{
+  float: left;
+  font-size: .24rem;
+  line-height: .6rem;
+  width: 2.6rem;
+  margin-right: .58rem;
+}
+
+.giftExchange-main .gifts .giftItem .giftItem-top{
+  width: 2.31rem;
+  height: 2.24rem;
+  border: 1px solid #2672D0;
+  padding: .13rem .14rem;
+  border-radius: .1rem;
+}
+.giftExchange-main .gifts .giftItem .giftItem-top img{
+  width: 2.29rem;
+  height: 2.22rem;
+  border: 1px solid #2672D0;
+  border-radius: .1rem;
+}
+.giftExchange-main .gifts .giftItem .giftItem-bottom{
+  width: 2.6rem;
+  height: .6rem;
+}
+.giftExchange-main .gifts .giftItem .giftItem-bottom .giftName{
+  float: left;
+}
+.giftExchange-main .gifts .giftItem .giftItem-bottom .golds{
+  float: right;
+  color: #feb52c;
+}
+.giftExchange-main .gifts .giftItem .giftItem-bottom .golds img{
+  vertical-align: middle;
+  width: .25rem;
+  height: .25rem;
+  padding-left: .1rem;
+}
+
+
+
+/*  底部  */
+.giftExchange-main .foot{
+  text-align: center;
+  color: #253355;
+  font-size: .24rem;
+  padding-top: .2rem;
+  margin-bottom: .8rem;
+}
+
+.giftExchange-main .tip{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: .98rem;
+  background: #253355;
+  font-size: .24rem;
+  line-height: .98rem;
+  padding: 0 .3rem;
+  box-sizing: border-box;
+}
+.giftExchange-main .tip .txt{
+  float: left;
+}
+.giftExchange-main .tip .detail{
+  float: right;
+  width: 1.2rem;
+  height: .5rem;
+  line-height: .5rem;
+  font-size: .3rem;
+  background: #DA225B;
+  border: 1px solid #ED246D;
+  border-radius: .1rem;
+  margin-top: .23rem;
+  text-align: center;
+}

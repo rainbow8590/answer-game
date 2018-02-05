@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>错题集</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/errorMuster.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+</head>
+<body>
+  <div class="errorMuster-main">
+    <div class="error-title">我踩错的足迹</div>
+    <div class="errors">
+      <div class="error">
+        <div class="error-t"><strong><em>1.</em> 2018.3.9</strong> <em>数学</em>计算</div>
+        <div class="error-b">小美有5颗糖，吃了两颗，还剩几颗？</div>
+        <div class="answer">
+          <div class="answer-title">小美有5颗糖，吃了两颗，还剩几颗？</div>
+          <div class="answer-img"><img src="./img/answer_img.png" alt=""></div>
+          <div class="answer-select">
+            <ul>
+              <li>in</li>
+              <li class="right">at</li>
+              <li class="wrong">out</li>
+            </ul>
+            <div class="explain">我的选择：B<br/>正确答案：C</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="error">
+        <div class="error-t"><strong><em>2.</em> 2018.3.9</strong> <em>数学</em>计算</div>
+        <div class="error-b">小美有5颗糖，吃了两颗，还剩几颗？</div>
+        <div class="answer">
+          <div class="answer-title">小美有5颗糖，吃了两颗，还剩几颗？</div>
+          <div class="answer-img"><img src="./img/answer_img.png" alt=""></div>
+          <div class="answer-select">
+            <ul>
+              <li>in</li>
+              <li class="right">at</li>
+              <li class="wrong">out</li>
+            </ul>
+            <div class="explain">我的选择：B<br/>正确答案：C</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="error">
+        <div class="error-t"><strong><em>3.</em> 2018.3.9</strong> <em>数学</em>计算</div>
+        <div class="error-b">小美有5颗糖，吃了两颗，还剩几颗？</div>
+        <div class="answer">
+          <div class="answer-title">小美有5颗糖，吃了两颗，还剩几颗？</div>
+          <div class="answer-img"><img src="./img/answer_img.png" alt=""></div>
+          <div class="answer-select">
+            <ul>
+              <li>in</li>
+              <li class="right">at</li>
+              <li class="wrong">out</li>
+            </ul>
+            <div class="explain">我的选择：B<br/>正确答案：C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery.1.12.4.js"></script>
+  <script>
+    //显示答案的切换效果
+    $('.error').on('click',function(){
+      // $(this).find('.answer').slideToggle();
+      $(this).find('.answer').slideDown(); 
+      $(this).siblings().find('.answer').slideUp(); 
+    })
+  </script>
+</body>
+</html>

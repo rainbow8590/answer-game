@@ -1,0 +1,81 @@
+body{
+  background: url('../img/bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #da225b;
+}
+.errorMuster-main .error-title{
+  line-height: 1.08rem;
+  text-align: center;
+  font-size: .3rem;
+}
+.errorMuster-main .errors{
+  padding: .34rem .3rem;
+}
+.errorMuster-main .errors .error{
+  background: rgba(2,17,29,.5);
+  font-size: .24rem;
+  padding-top: .2rem;
+}
+.errorMuster-main .errors .error .error-t{
+  font-size: .2rem;
+  padding: 0 .4rem .18rem .4rem;
+}
+.errorMuster-main .errors .error .error-t em{
+   padding-right: .3rem;
+}
+.errorMuster-main .errors .error .error-t strong{
+  color: #0086c9;
+  padding-right: 1rem;
+}
+.errorMuster-main .errors .error .error-t strong em{
+  padding-right: .56rem;
+}
+.errorMuster-main .errors .error .error-b{
+  color: #DBE3F1;
+  padding: 0 .4rem .16rem .4rem;
+  border-bottom: 1px solid #253355;
+}
+.errorMuster-main .errors .error .answer{
+  padding: .16rem  0 .38rem 0;
+  color: #dbe3f1;
+  display: none;
+}
+.errorMuster-main .errors .error .answer .answer-title{
+  line-height: .7rem;
+  text-align: center;
+}
+.errorMuster-main .errors .error .answer .answer-img{
+  width: 4.95rem;
+  height: 3.32rem;
+  border-radius: .1rem;
+  margin: 0 auto;
+  margin-bottom: .4rem;
+  overflow: hidden;
+}
+.errorMuster-main .errors .error .answer .answer-img img{
+  width: 4.95rem;
+  height: 3.32rem;
+}
+.errorMuster-main .errors .error .answer .answer-select{
+  width: 4.95rem;
+  margin: 0 auto;
+}
+.errorMuster-main .errors .error .answer .answer-select ul li{
+  line-height: .66rem;
+  border: 1px solid #2672D0;
+  border-radius: .1rem;
+  text-align: center;
+  margin-bottom:  .2rem;
+}
+.errorMuster-main .errors .error .answer .answer-select ul li.right{
+  border-color: #29A352;
+  background: #29A352;
+}
+.errorMuster-main .errors .error .answer .answer-select ul li.wrong{
+  border-color: #D3366A;
+  background: #D3366A;
+}
+.errorMuster-main .errors .error .answer .answer-select .explain{
+  line-height: .4rem;
+}

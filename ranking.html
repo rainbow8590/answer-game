@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>排行榜</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="css/style-index.css" />
+    <script src="http://img.gaosiedu.com/www/js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.tabso_yeso.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var windW=$(window).width();
+            var Ws=document.getElementById("page-ranking").style.width=windW + 'px';
+            var x=document.getElementsByClassName("sublist");
+                x[0].style.width=windW + "px";
+                x[1].style.width=windW + "px";
+
+            $("#move-animate-left").tabso({
+                cntSelect:"#leftcon",
+                tabEvent:"mouseover",
+                tabStyle:"move-animate",
+                direction : "left"
+            });
+        });
+    </script>
+</head>
+<body>
+    <section class="page-bg page-ranking" id="page-ranking">
+        <ul class="tabs flex" id="move-animate-left">
+            <li class="current">比大家</li>
+            <li>比好友</li>
+        </ul>
+
+        <div class="main" id="leftcon">
+            <div class="subbox">
+                <!--比大家-->
+                <div class="sublist">
+                    <div class="mod-box">
+                        <div class="tInfo right">
+                            <span class="gold">300</span>
+                            <span class="myRanking">NO.15</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="num">NO.1</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.2</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.3</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.4</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.5</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.6</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.7</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.8</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.9</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.10</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--比好友-->
+                <div class="sublist">
+                    <div class="mod-box">
+                        <div class="tInfo right">
+                            <span class="gold">300</span>
+                            <span class="myRanking">NO.15</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="num">NO.1</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称称昵称昵称称昵称称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.2</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.3</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.4</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.5</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.6</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.7</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.8</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.9</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                            <li>
+                                <span class="num">NO.10</span>
+                                <img src="img/temp-1.jpg" class="avatar" />
+                                <span class="name">昵称昵称昵称昵称</span>
+                                <span class="Minute">400</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

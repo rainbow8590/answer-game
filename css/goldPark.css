@@ -1,0 +1,210 @@
+/* goldPark  金币乐园 */
+html {
+  font-size: 100px;
+}
+html,body{
+  width: 100%;
+  min-height: 100%;
+}
+
+body{
+  background-image: url('../img/bg.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/* 金币展示 =============================== */
+.goldPark-main .showGold{
+  margin: .38rem 0 1rem 6rem;
+  padding-left: .45rem;
+  background: url('../img/gold.png') no-repeat;
+  background-size: .38rem .39rem;
+  font-size: .24rem;
+  color: #dbe3f1;
+  line-height: .39rem;
+  font-weight: normal;
+}
+
+/* 温馨提示 =============================== */
+.goldPark-main .tip{
+  width: 80%;
+  line-height: .46rem;
+  padding: .1rem .28rem;
+  background: #061F3D;
+  border: 1px solid #0AB6DA;
+  border-radius: .1rem;
+  color: #9cc8ff;
+  font-size: .24rem;
+  margin: 0 auto .66rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-animation:fadeInUpBig 1s 0s ease both;
+  animation:fadeInUpBig 1s 0s ease both;
+  
+}
+
+/* 成长树苗 兑换金币 公共部分 =============================== */
+.goldPark-main .goldPark-item{
+  position: relative;
+  height: 3.36rem;
+  width: 100%;
+  margin-bottom: .4rem;
+}
+
+.goldPark-main .goldPark-item1{
+  background: url(../img/tree_bg.jpg) no-repeat .7rem .1rem;
+  -webkit-background-size: 5.80rem 3.06rem;
+  background-size: 5.80rem 3.06rem;
+  -webkit-animation: bounceInDown 1s 0.4s ease both;
+  animation: bounceInDown 1s 0.4s ease both;
+
+}
+.goldPark-main .goldPark-item2{
+  background: url(../img/goldChange_bg.jpg) no-repeat .7rem .1rem;
+  -webkit-background-size: 5.80rem 3.06rem;
+  background-size: 5.80rem 3.06rem;
+  -webkit-animation: bounceInDown 1s 0s ease both;
+  animation: bounceInDown 1s 0s ease both;
+
+}
+.goldPark-main .goldPark-item .rotate{
+  position: absolute;
+}
+
+.goldPark-main .goldPark-item .rotate1{
+  width: 1.1rem;
+  height: 1.1rem;
+  left: .3rem;
+  top: 0;
+  background: url(../img/goldPark_rotate.png) no-repeat;
+  -webkit-background-size: 1.1rem 1.1rem;
+  background-size: 1.1rem 1.1rem;
+
+  -webkit-animation: rotates 3s linear .3s infinite;
+  animation: rotates 3s linear .3s infinite;
+}
+.goldPark-main .goldPark-item .rotate2{
+  width: .5rem;
+  height: .47rem;
+  left: 6.0rem;
+  top: 2.7rem;
+  background: url(../img/goldPark_icon.png) no-repeat;
+  -webkit-background-size: .5rem .47rem;
+  background-size: .5rem .47rem;
+
+  -webkit-animation: flipOutY 3s linear .3s infinite;
+  animation: flipOutY 3s linear .3s infinite;
+ 
+}
+.goldPark-main .goldPark-item .rotate3{
+  width: .88rem;
+  height: .84rem;
+  left: .38rem;
+  top: 2.55rem;
+  background: url(../img/goldPark_icon1.png) no-repeat;
+  -webkit-background-size: .88rem .84rem;
+  background-size: .88rem .84rem;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  -webkit-animation: zoomIn 3s linear 1s infinite;
+  animation: zoomIn 3s linear 1s infinite;
+}
+
+@-webkit-keyframes rotates
+{
+　　form {transform:rotate(0deg);}    
+    to    {transform:rotate(360deg);}
+}
+@keyframes rotates
+{
+　　form {transform:rotate(0deg);}    
+    to    {transform:rotate(360deg);}
+}
+
+/*温馨提示动画*/
+@-webkit-keyframes bounceInDown{
+  0%{opacity:0;-webkit-transform:translateY(-2000px)}
+  60%{opacity:1;-webkit-transform:translateY(30px)}
+  80%{-webkit-transform:translateY(-10px)}
+  100%{-webkit-transform:translateY(0)}
+}
+@keyframes bounceInDown{
+  0%{opacity:0;transform:translateY(-2000px)}
+  60%{opacity:1;transform:translateY(30px)}
+  80%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+@-webkit-keyframes flipOutY {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutY {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+}
+@-webkit-keyframes fadeInUpBig{
+  0%{opacity:0;-webkit-transform:translateY(2000px)}
+  100%{opacity:1;-webkit-transform:translateY(0)}
+}
+@keyframes fadeInUpBig{
+  0%{opacity:0;transform:translateY(2000px)}
+  100%{opacity:1;transform:translateY(0)}
+}

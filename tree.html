@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>成长树苗</title>
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/tree.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+  <script>
+  window.onload = function(){
+      var goldNum = 500;
+      /*施肥逻辑 ==============*/ 
+       //撒养分
+      var water1 = document.getElementById('water1');
+      var muck1 = document.getElementById('muck1');
+      var sun1 = document.getElementById('sun1');
+      var glods = document.getElementById('glodNum');
+      glods.innerHTML = goldNum;
+      var baseItems = document.querySelectorAll('.baseItem');
+      var timeArr1 = sessionStorage.getItem('timeArrStr')? sessionStorage.getItem('timeArrStr').split(','):[];
+      var indexArr1 = sessionStorage.getItem('indexArrStr')? sessionStorage.getItem('indexArrStr').split(','):[];
+   
+      //记录时间
+      var date = new Date();
+      var day = date.getDate();
+      //点击时获取的实时时间数组
+      var timeArr = sessionStorage.getItem('timeArrStr');
+      var indexArr = sessionStorage.getItem('indexArrStr');
+      //var max = Math.max.apply( Math, timeArr);
+
+      //如果点击过 
+      if(timeArr){
+        timeArr = timeArr.split(',');
+        var oldTime = Number(timeArr[timeArr.length-1]);
+        var oldDay = new Date(oldTime).getDate(); // 获取最后一次点击的日期中的'日';
+        //过了当日
+        if(oldDay < day){
+            //清除缓存
+            sessionStorage.removeItem('timeArrStr');
+            sessionStorage.removeItem('indexArrStr');
+            //将旧日期换成今天的日期
+            oldDay = day;
+            for(var i = 0 ; i < baseItems.length; i++){
+              (function(i) {
+                    baseItems[i].style.color = "#1BB2F3";
+                    baseItems[i].setAttribute('data-click','false')
+                    var ig = baseItems[i].childNodes.item(1);
+                    var tt = ig.src.slice(ig.src.lastIndexOf('/')+1,ig.src.lastIndexOf('.')).replace('1','');
+                    ig.src= './img/'+tt+".png";
+              })(i)
+            }
+        }else{ //当日第N次打开
+            for(var i = 0 ; i < baseItems.length; i++){
+              for(var j = 0; j < indexArr.length;j++){
+                (function(i,j) {
+                  if( i == indexArr[j]){
+                      baseItems[i].style.color = "gray";
+                      baseItems[i].setAttribute('data-click','true')
+                      var ig = baseItems[i].childNodes.item(1);
+                      var tt = ig.src.slice(ig.src.lastIndexOf('/')+1,ig.src.lastIndexOf('.')).replace('1','');
+                      console.log(ig)
+                      console.log(tt)
+                      ig.src= './img/'+tt+"1.png";
+                    }
+                })(i,j)
+              }
+            }
+        }
+      }
+      for(var i = 0 ; i < baseItems.length; i++){
+        (function(i) {
+            baseItems[i].onclick = function() {
+                //当 this.getAttribute('data-click') == false时, 说明还没有点过
+                if(this.getAttribute('data-click') == 'false'){
+                  indexArr1.push(i);
+                  timeArr1.push(new Date().getTime())
+                  sessionStorage.setItem('timeArrStr',timeArr1);
+                  sessionStorage.setItem('indexArrStr',indexArr1);
+                  this.setAttribute('data-click','true')
+                  var ig = this.childNodes.item(1);
+                  var tt = ig.src.slice(ig.src.lastIndexOf('/')+1,ig.src.lastIndexOf('.'))
+                  if(tt.indexOf('1') != -1){
+                    return;
+                  }
+                  this.style.color = "gray";
+                  ig.src= './img/'+tt+"1.png";
+                  var nowGold = goldNum-100;
+                  if(i == 0){
+                    // water1.style.display = 'block';
+                    water1.className += ' water1';
+                  }else if(i == 1){
+                    muck1.className += ' water1';
+                  }else{
+                    sun1.className += ' sun1';
+                  }
+                  var timer = setInterval(function(){
+                    if(goldNum<= nowGold){
+                      clearInterval(timer);
+                      return;
+                    }
+                    goldNum--;
+                    glods.innerHTML = goldNum;
+                  },1)
+                }
+            }
+        })(i)
+      }
+
+     
+
+  }
+ </script>
+
+
+</head>
+<body>
+  <div class="tree-main">
+    <!-- 金币数量 -->
+    <div class="showGold"><strong id="glodNum">300</strong></div>
+    <!-- 树苗 -->
+    <div class="tree">
+      <div class="rotate rotate1"></div>
+      <div class="animated flipOutY infinite rotate rotate2"></div>
+      <div class="rotate rotate3"></div>
+      <div id="sun1" class="sun"></div>
+      <div id="muck1" class="muck"></div>
+      <div id="water1" class="water"></div>
+      <div class="trees"><img src="./img/tree1.png" alt=""></div>
+      
+    </div>
+    <!-- 树苗养分基地 -->
+    <div class="base">
+      <div class="title">树苗养分基地</div>
+      <div class="basess">
+        <div class="baseItem" data-click="false" >
+          <img src="./img/tree_water.png" alt="">
+          <p>浇 水</p>
+        </div>
+        <div class="baseItem" data-click="false" >
+          <img src="./img/tree_muck.png" alt="">
+          <p>肥 料</p>
+        </div>
+        <div class="baseItem" data-click="false">
+          <img src="./img/tree_sun.png" alt="">
+          <p>阳 光</p>
+        </div> 
+      </div>
+    </div>
+    <!-- 攻略 -->
+    <div class="rules">
+      <div class="title">攻 略</div>
+      <div class="rule">
+        <p class="title1">如何获取金币</p>
+        <p>每日均可答题获得金币,答题正确率越高,速度越快,获得金币越多。</p>
+      </div>
+      <div class="rule">
+        <p class="title1">如何让小树苗快速成长</p>
+        <p>多多兑换养分给小树苗,会让它茁壮成长,水,肥料,阳光是必不可少的。</p>
+      </div>
+      <div class="rule">
+        <p class="title1">兑换规则是什么</p>
+        <p>每天所需的养分兑换:<br/> 水：100金币;阳光:100金币;肥料:100金币。</p>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>
+</html>

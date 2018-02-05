@@ -1,0 +1,187 @@
+body{
+  background: url('../img/bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #dbe3f1;
+}
+.sign-main{
+  font-size: .24rem;
+}
+.sign-main .sign-btn{
+  width: 6.61rem;
+  height: 4.5rem;
+  background: url('../img/sign_bg.png') left top no-repeat;
+  -webkit-background-size: 6.61rem 4.5rem;
+  background-size: 6.61rem 4.5rem;
+  margin: .4rem auto 0;
+}
+.sign-main .sign-btn{
+  position: relative;
+  width: 6.61rem;
+  height: 4.5rem;
+  background: url('../img/sign_bg.png') left top no-repeat;
+  -webkit-background-size: 6.61rem 4.5rem;
+  background-size: 6.61rem 4.5rem;
+  margin: .4rem auto 0;
+}
+.sign-main .sign-btn img.circle{
+  width: 2.79rem;
+  height: 2.69rem;
+  margin: 0 auto ;
+  display: block;
+  padding-top: .3rem;
+  -webkit-animation: scaleTo 3s linear .3s infinite;
+  animation: scaleTo 3s linear .3s infinite;
+}
+.sign-main .sign-btn img.foot{
+  width: 3.05rem;
+  height: 1.19rem;
+  margin: 0 auto ;
+  display: block;
+}
+.sign-main .sign-btn .sign_bg{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-left: -.9rem;
+  margin-top: -1.5rem;
+  line-height: 1.4rem;
+  color: #2672d0;
+  background: #dbe3f1;
+  border-radius: 50%;
+  text-align: center;
+  font-size: .5rem;
+}
+.sign-main .sign-btn .sign_txt{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.08rem;
+  height: .38rem;
+  line-height: .4rem;
+  margin-left: -1.04rem;
+  margin-top: -.4rem;
+  color: #dbe3f1;
+  background: #2672d0;
+  border-radius:  1.9rem;
+  text-align: center;
+  font-size: .24rem;
+}
+.sign-main .answer-sign {
+  font-size: .3rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #253355;
+}
+.sign-main .answer-sign h3{
+  line-height: .98rem;
+  font-size: .3rem;
+  text-align: center;
+  font-weight: normal;
+}
+.sign-main .answer-sign .sign-progress{
+  margin-top: .1rem;
+  width: 6.3rem;
+  height: 0.06rem;
+  background: #2672D0;
+  margin: 0 auto;
+  position: relative;
+}
+.sign-main .answer-sign .sign-progress .dot{
+  width: .3rem;
+  height: .3rem;
+  border-radius: 50%;
+  background: #DBE3F1;
+  position: absolute;
+  top:50%;
+  margin-top: -.15rem;
+  margin-left: -.15rem;
+}
+.sign-main .answer-sign .sign-progress .dot.active{
+  background: #FEB52C;
+}
+.sign-main .answer-sign .sign-progress .dot1{
+  left: 0;
+}
+.sign-main .answer-sign .sign-progress .dot2{
+  left: 25%;
+}
+.sign-main .answer-sign .sign-progress .dot3{
+  left: 50%;
+}
+.sign-main .answer-sign .sign-progress .dot4{
+  left: 75%;
+}
+.sign-main .answer-sign .sign-progress .dot5{
+  left: 100%;
+}
+.sign-main .answer-sign .addGold{
+  width: 1.8rem;
+  height: .55rem;
+  line-height: .55rem;
+  color: #DBE3F1;
+  background: #DA225B;
+  margin: .5rem auto 0;
+  border-radius: .1rem;
+  border: 1px solid #ED246D;
+  text-align: center;
+}
+.sign-main .today-task{
+  width: 6.6rem;
+  margin: 0 auto;
+  padding-top: .1rem;
+  font-size: .3rem;
+}
+.sign-main .today-task h3{
+  font-weight: normal;
+  text-align: center;
+}
+.sign-main .today-task .task-item{
+  padding: .3rem .2rem;
+  border-bottom: 1px solid #253355;
+  overflow: hidden;
+  font-size: .24rem;
+}
+.sign-main .today-task .task-item1{
+  line-height: .55rem;
+}
+.sign-main .today-task .task-item strong{
+  color: #FEB52C;
+  font-weight: normal;
+}
+.sign-main .today-task .task-item .left{
+  float: left;
+  width: 4rem;
+  padding-right: .55rem;
+  
+}
+.sign-main .today-task .task-item .right{
+  float: left;
+  width: 1.55rem;
+  height: .55rem;
+  line-height: .55rem;
+  color: #DBE3F1;
+  background: #DA225B;
+  border-radius: .1rem;
+  border: 1px solid #ED246D;
+  text-align: center;
+}
+.sign-main .gray{
+  background: #ccc!important;
+  color: #666!important;
+  border-color: #ccc!important;
+}
+
+@-webkit-keyframes scaleTo
+{
+　　form {-webkit-transform:scale(1);}    
+    50% {-webkit-transform:scale(1.1);}    
+    100%    {-webkit-transform:scale(1);}
+}
+@keyframes rotates
+{
+　　form {transform:scale(1);}    
+    50%  {transform:scale(1.1);}    
+    100%    {transform:scale(1);}
+}

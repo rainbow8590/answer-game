@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏大厅</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="css/style-index.css" />
+    <script src="http://img.gaosiedu.com/www/js/jquery.js"></script>
+    <script src="http://img.gaosiedu.com/www/js/jquery.gstools.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".ruleNode").click(function(){
+              $(".page-rule").show();
+              $(".page-rule .box").addClass("downAng");
+            });
+            $(".shutDown").click(function(){
+              $(".page-rule").hide();
+            });
+         });
+    </script>
+</head>
+<body>
+    <section class="page-bg page-GamesLobby clearfix">
+        <div class="TopUser tac">
+            <a href="./self.html" >
+                <img src="img/temp-1.jpg" class="avatar" width="60" height="60" />
+                <div class="name mt10">昵称昵称昵称</div>
+            </a>
+            <div class="clearfix user-Minute">
+                <div class="heart left">
+                    <img src="img/heart_red.png" />
+                    <img src="img/heart_gray.png" />
+                    <img src="img/heart_gray.png" />
+                </div>
+                <div class="gold right">300</div>
+            </div>
+        </div>
+        <div class="main">
+            <ul>
+                <li>
+                    <a href="./dayPractice.html">
+                        <img src="img/page-GamesLobby-img1.png" width="90" />
+                        <em>每日一练</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="./goldPark.html">
+                        <img src="img/page-GamesLobby-img2.png" width="90" />
+                        <em>金币乐园</em>
+                    </a>
+                </li>
+                <li>
+                    <a href="./ranking.html">
+                        <img src="img/page-GamesLobby-img3.png" width="90" />
+                        <em>排行榜</em>
+                    </a>
+                </li>
+            </ul>
+            <a href="javascript:;" class="ruleNode tac">游戏规则</a>
+        </div>
+        <a href="./sign.html" class="cardBtn"><span>签到有礼</span></a>
+    </section>
+
+    <article class="layer page-rule" style="display:none">
+        <section class="box tal">
+            <p>本游戏专为低年级学生设计，为幼升小奠定基础，一年级与二年级做相应提升，对学生的学科水平分析，让家长对学生的偏科情况一目了然。本游戏提供语、数、英三科题目及答案，完成题目测试可联系客服可提供全套题目及解析。</p>
+            <p>出于学习趣味性以及学生日考试的时间概念的考虑，本游戏设置了答题时间的规定，学生应在规定时间内做出回答。为替考学习热情，本游戏设置金币奖励环节，答题完成后，根据学生的答题表现给出定量金币，学生可使用金币兑换礼品（礼品由高思博乐特别定制），或者学生可使用金币在虚拟环境下种树，环保意识，从小培养。</p>
+            <p>特别说明：如学生愿意接受高年级学生的挑战，完成对战，本次开局不消耗体力，不计入总成绩，亦不予金币奖励。</p>
+        </section>
+        <div class="shutDown"></div>
+    </section>
+
+
+
+</body>
+</html>

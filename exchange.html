@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>兑换详情页</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="css/style-index.css" />
+    <script language="javascript" type="text/javascript">  
+        //定义 校区 数据数组  
+        cityArray = new Array();  
+        cityArray[0] = new Array("海淀区","海淀黄庄--海文校区|海淀黄庄--理想校区|海淀黄庄--银网校区|海淀黄庄--中关村大厦|海淀黄庄|大钟寺--中鼎校区|世纪城--金源校区|学院路--矿大东门校区|学院桥--高思大厦校区|公主坟--国宜校区|上地--科实校区|玉泉路--景藏大厦校区|上地--超市发校区|世纪城--居然之家校区");  
+        cityArray[1] = new Array("朝阳区","亚运村校区|太阳宫校区|团结湖校区|管庄校区|望京--六佰本校区");  
+        cityArray[2] = new Array("西城区","西四--平安里校区|右安门校区|广安门校区|阜成门校区"); 
+        cityArray[3] = new Array("东城区","广渠门校区|朝阳门校区|和平里校区"); 
+        cityArray[4] = new Array("石景山","八角校区|玉泉路--远洋山水校区"); 
+        cityArray[5] = new Array("昌平区","立水桥校区|回龙观校区"); 
+        cityArray[6] = new Array("丰台区","刘家窑校区|马家堡校区"); 
+        cityArray[7] = new Array("房山区","良乡校区"); 
+        cityArray[8] = new Array("请选择区间","请选择校区");
+        function getCity(currProvince)  
+        {
+            var currProvince = currProvince;
+            var i,j,k;
+            document.all.selCity.length = 0 ;
+            for (i = 0 ;i <cityArray.length;i++)
+            {
+                if(cityArray[i][0]==currProvince)  
+                {
+                    var tmpcityArray = cityArray[i][1].split("|")  
+                    for(j=0;j<tmpcityArray.length;j++)
+                    {  
+                        document.all.selCity.options[document.all.selCity.length] = new Option(tmpcityArray[j],tmpcityArray[j]);  
+                    }
+                }
+            }
+        }
+    </script>  
+</head>
+<body>
+    <section class="page-bg page-exchange">
+        <article>
+            <div class="pro-img">
+                <img src="img/temp2.jpg" width="100%" />
+            </div>
+            <ul class="pro-info">
+                <li>
+                    <span>礼品介绍：</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.  Cum sociis mollis orci, sed rhoncus sapien nunc eget.
+                </li>
+                <li>
+                    <span>价格：</span>200金币
+                </li>
+                <li>
+                    <span>剩余数量：</span>10
+                </li>
+                <li class="set-school">
+                    <span>请选择领取地址：</span>
+                    <div class="sel">
+                        <select id="selProvince" onChange = "getCity(this.options[this.selectedIndex].value)"> 
+                            <option value="请选择区间">请选择区间</option>  
+                            <option value="海淀区">海淀区</option>  
+                            <option value="朝阳区">朝阳区</option>  
+                            <option value="西城区">西城区</option>
+                            <option value="东城区">东城区</option>  
+                            <option value="石景山">石景山</option>  
+                            <option value="昌平区">昌平区</option>  
+                            <option value="丰台区">丰台区</option>  
+                            <option value="房山区">房山区</option>  
+                        </select>
+                    </div>
+                    <div class="sel">
+                        <select id="selCity">
+                            <option>请选择校区</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </article>
+        <footer class="tac">
+            <a href="javascript:;" class="btn" id="sure">确认兑换</a>
+            <a href="./GamesLobby.html" class="next" id="next"> 继续赚取金币>> </a>
+        </footer>
+    </section>
+    <script>
+    var sure = document.getElementById('sure')
+    var next = document.getElementById('next')
+    //判断金币总数量
+    var totalGold = 50; //剩余总金币
+    var nowGiftGold = 70 ; // 兑换当前礼物的金币
+    if(totalGold > nowGiftGold){
+        sure.style.display = 'block';
+        next.style.display = 'none';
+    }else{
+        sure.style.display = 'none';
+        next.style.display = 'block';
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+body{
+  background: url('../img/bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #dbe3f1;
+  overflow: hidden;
+}
+.dayPractice-main{
+
+}
+.dayPractice-main .dayPractice-top{
+  margin: .38rem .5rem .35rem 0;
+  padding-left: .45rem;
+  font-size: .24rem;
+  color: #dbe3f1;
+  line-height: .39rem;
+  overflow: hidden;
+}
+.dayPractice-main .dayPractice-top .heart{
+   float: left;
+}
+.dayPractice-main .dayPractice-top .heart img{
+   display: inline-block;
+   width: .47rem;
+   height: .37rem;
+   padding-right: .05rem;
+}
+.dayPractice-main .dayPractice-top .showGold{
+   float: right;
+   padding-left: .45rem;
+   background: url('../img/gold.png') no-repeat;
+  background-size: .38rem .39rem;
+}
+.dayPractice-main .dayPractice-top .showGold strong{
+   font-weight: normal;
+}
+
+
+.dayPractice-main .dayPractice-bottom{
+  height: 10.6rem;
+  background: url('../img/dayPractice_bg.png') left top no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: .58rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.dayPractice-main .dayPractice-bottom .title{
+  width: 100%;
+  height: 3.5rem;
+  background: url('../img/dayPractice_title_bg.png') center top no-repeat;
+  -webkit-background-size: 5.05rem 3.27rem;
+  background-size: 5.05rem 3.27rem;
+  font-size: .33rem;
+  text-align: center;
+  font-weight: bold;
+}
+.dayPractice-main .dayPractice-bottom .title p.big-txt{
+  font-size: 1.14rem;
+  line-height: 1.14rem;
+  padding-top: .7rem;
+  padding-bottom: .1rem;
+  font-weight: normal;
+  -webkit-animation:fadeInRightBig .5s .2s ease both;
+  animation:fadeInRightBig .5s .2s ease both;
+}
+.dayPractice-main .dayPractice-bottom .title p.big-txt strong{
+  color: #1bb2f3;
+  font-weight: normal;
+}
+.dayPractice-main .dayPractice-bottom .title p.small-txt {
+  -webkit-animation:fadeIn 1s .7s ease both;
+  animation:fadeIn 1s .7s ease both;
+}
+
+.dayPractice-main .dayPractice-bottom .go{
+  height: 6.42rem;
+  background: url(../img/dayPractice_hand.png) no-repeat center top;
+  -webkit-background-size: 4.3rem 3.5rem;
+  background-size: 4.3rem 3.5rem;
+}
+.dayPractice-main .dayPractice-bottom .go .goBtn{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.dayPractice-main .dayPractice-bottom .go .goBtn img{
+  width: 7.2rem;
+  height: 6.42rem;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+.dayPractice-main .dayPractice-bottom .go .goBtnAdd{
+  -webkit-animation: hide .3s linear;
+  animation: hide .3s linear;
+  /*animation-direction:;*/
+}
+
+
+
+.dayPractice-main .history{
+  width: 100%;
+  text-align: center;
+  padding-top: .3rem;
+  font-size: .24rem;
+  font-family: '宋体',Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.dayPractice-main .history a{
+  color: #dbe3f1;
+  display: block;
+  width: 100%;
+}
+
+@-webkit-keyframes hide
+{
+　　0% {transform:scale(1) rotate(0deg); opacity: 1;}    
+    100%  {transform:scale(3) rotate(30deg); opacity: 0;}
+}
+@keyframes hide
+{
+　　0% {transform:scale(1) rotate(0deg); opacity: 1;}    
+    100%  {transform:scale(3) rotate(30deg); opacity: 0;}
+}
+
+
+
+@-webkit-keyframes fadeInRightBig{
+  0%  {opacity:0; -webkit-transform:translateX(2000px)}
+  100%{opacity:1; -webkit-transform:translateX(0)}
+}
+@keyframes fadeInRightBig{
+  0%  {opacity:0; transform:translateX(2000px)}
+  100%{opacity:1; transform:translateX(0)}
+}
+
+
+@-webkit-keyframes fadeIn{
+  0%{opacity:0}
+  100%{opacity:1}
+}
+@keyframes fadeIn{
+  0%{opacity:0}
+  100%{opacity:1}
+}

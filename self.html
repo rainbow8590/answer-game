@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>个人主页</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/self.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+</head>
+<body>
+  <div class="self-main">
+    <!-- 标题 -->
+    <div class="self-title">
+      成绩解析
+      <div class="error-book" id="errorbook-icon"></div>
+    </div>
+    <!-- 网状图 -->
+
+    <div id="map" class="map" style="width: 100%;height:300px;"></div>
+    <!-- 提示 -->
+    <div class="tip">
+      <p>您已连续答题8天，总共答题240道，请继续坚持</p>
+      <p>正确率达98%，打败高思杯99%的用户</p>
+    </div>
+    <!-- 二维码 -->
+    <div class="code">
+      <div class="code-bg">
+        <div class="code-img"><img src="./img/self_code.png" alt=""></div>
+        <div class="code-tip">
+          <p>对游戏疑问?搞不懂?欢迎加群了解</p>
+          <p>需要全套题目及解析?欢迎加群联系客服</p>
+          <p>扫码不成功?加微信好友：xxx</p>
+          <p>备注:高思杯玩家</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./js/echarts.min.js"></script>
+  <script>
+  // 跳转页面
+  var errorBook = document.getElementById('errorbook-icon');
+  errorBook.onclick = function(){
+    location.href = './errorMuster.html'
+  }
+
+  var myChart = echarts.init(document.getElementById('map'));
+  var option = {
+    title: {
+        text: ''
+    },
+
+    tooltip: {},
+    legend: {
+    },
+    polar : {
+
+        name: {
+            color: '#1BB2F3',
+            fontSize: '12px',
+        },
+        axisLine:{
+          lineStyle:{
+            width: 1,
+            color: '#1BB2F3',//雷达图线的颜色
+          }
+        },
+        splitLine:{
+          lineStyle:{
+            width: 1,
+            color: '#1BB2F3',//雷达图线的颜色
+          }
+        },
+        splitArea : {
+            areaStyle : {
+              color: ["transparent"]  //雷达图的背景色
+            }
+        },
+        indicator: [
+           { name: '语文1', max: 100},
+           { name: '数学1', max: 100},
+           { name: '英语1', max: 100},
+           { name: '语文2', max: 100},
+           { name: '数学2', max: 100},
+           { name: '英语2', max: 100},
+        ],
+        startAngle: 60,
+        splitNumber: 10,
+    },
+    series: [{
+        name: '',
+        type: 'radar',
+        symbol: "none",
+        areaStyle:{
+          color:'#C62257',
+          opacity: 1
+        },
+        data : [
+            {
+                value : [60, 50, 70, 90, 60, 70],
+            }
+        ]
+    }]
+
+};
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+
+  </script>
+</body>
+</html>

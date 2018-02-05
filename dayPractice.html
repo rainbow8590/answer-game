@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>每日一练</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/dayPractice.css">
+  <!-- 字体适应屏幕 -->
+  <script src="./js/resizeFontSize.js"></script>
+  <script>
+    //浏览器里有缓存就重新刷新页面
+    window.onpageshow = function(event){
+      if (event.persisted) {
+        window.location.reload();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="dayPractice-main">
+  <input type="hidden" value="1" id="inp">
+    <!-- 心和金币 -->
+    <div class="dayPractice-top">
+      <div class="heart">
+        <img src="./img/heart_red.png" alt="">
+        <img src="./img/heart_red.png" alt="">
+        <img src="./img/heart_gray.png" alt="">
+      </div>
+      <div class="showGold"><strong>300</strong></div>
+    </div>
+    <!-- 每日一练主题 -->
+    <div class="dayPractice-bottom">
+      <!-- 标题 -->
+        <div class="title">
+          <p class="big-txt"><strong>每日</strong>一练</p>
+          <p class="small-txt">你已经准备好了，那还等什么？</p>
+        </div>
+      <!-- go -->
+        <div class="go">
+          <div class="goBtn"> 
+            <img src="./img/dayPractice_go.png" alt="" id="go">
+          </div>
+        </div>
+    </div>
+    <!-- 历史答题 -->
+    <!-- <div class="history"> <a href="./errorMuster.html">我的历史答题 <strong>>></strong></a></div> -->
+  </div>
+
+  <script>
+    var go = document.getElementById('go');
+
+    go.onclick = function(){
+      this.className = 'goBtnAdd';
+      setTimeout(function(){
+        window.location.href = './answer.html';
+      },200)
+    }
+
+
+   
+   </script>
+</body>
+</html>
